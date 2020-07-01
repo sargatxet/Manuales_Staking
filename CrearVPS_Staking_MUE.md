@@ -2,11 +2,11 @@
 
 En este manual vamos a detallar los pasos necesarios para crear un servicio VPS basado en **Ubuntu Linux 18.04 LTS** base para poder realizar labores de staking.
 
-Puedes ver en detalle todos los pasos a realizar en este [vídeo](....).
+Puedes ver en detalle todos los pasos a realizar en este [vídeo](....){:target="\_blank"}.
 
 ## Selección de servicio VPS y necesidades mínimas
 
-Se ha seleccionado para la instalación el servicio de [Vultr](https://www.vultr.com/?ref=8598591-6G) debido a que nos proporciona 100\$ de saldo al registrarnos para usarlos durante el primer més usando este enlace https://www.vultr.com/?ref=8598591-6G.
+Se ha seleccionado para la instalación el servicio de [Vultr](https://www.vultr.com/?ref=8598591-6G){:target="\_blank"} debido a que nos proporciona 100\$ de saldo al registrarnos para usarlos durante el primer més usando este enlace [Vultr](https://www.vultr.com/?ref=8598591-6G){:target="\_blank"}.
 
 Cada servicio de staking tiene unas necesidades mínimas necesarias:
 
@@ -14,7 +14,7 @@ Cada servicio de staking tiene unas necesidades mínimas necesarias:
 -   **OkCash**: 1 Core, 2GB RAM y 10GB de disco duro
 -   **Energi**: 1 Core, 1GB RAM y 10GB de disco duro
 
-Debido a eso y tomando como servicio VPS [Vultr](https://www.vultr.com/?ref=8598591-6G) deberemos elegir los siguientes tipos de servicios:
+Debido a eso y tomando como servicio VPS [Vultr](https://www.vultr.com/?ref=8598591-6G){:target="\_blank"} deberemos elegir los siguientes tipos de servicios:
 
 -   **MonetaryUnit**: Server Cloud Compute --> Server Size 25 GB SSD (5\$/mes)
 -   **OkCash**: Server Cloud Compute --> Server Size 55 GB SSD (10\$/mes)
@@ -24,7 +24,7 @@ Otro punto a tener en cuenta a la hora de crear el servidor será la ubicación.
 
 ## Creación del servidor
 
-Para este proceso vamos a tomar de ejemplo **MonetaryUnit** por ser el más fácil y económico de construir. Los pasos, una vez creada la cuenta en [Vultr](https://www.vultr.com/?ref=8598591-6G) serían los siguientes:
+Para este proceso vamos a tomar de ejemplo **MonetaryUnit** por ser el más fácil y económico de construir. Los pasos, una vez creada la cuenta en [Vultr](https://www.vultr.com/?ref=8598591-6G){:target="\_blank"} serían los siguientes:
 
 1. Accederemos al apartado de **Products/Instances** y pulsaremos el botón de añadir ubicado a la derecha.
    ![alt text](./Vultr1.png)
@@ -58,7 +58,7 @@ En este apartado tendremos datos muy importantes que nos servirán para poder co
 
 Una vez creado deberemos conectarnos al servidor para poder configurarlo. Para ello usaremos un cliente SSH que, dependiendo del S.O. de nuestro ordenador, podría ser:
 
--   **GNU/Linux y MacOS X**: Disponen del cliente _ssh_ en la consola de comandos del S.O. Para poder conectarnos al servidor usaremos la siguiente instrucción (deberemos sustituir _IP_SERVIDOR_ por la IP proporcionada por [Vultr](https://www.vultr.com/?ref=8598591-6G) en la pantalla anterior, en nuestro caso _185.92.222.149_):
+-   **GNU/Linux y MacOS X**: Disponen del cliente _ssh_ en la consola de comandos del S.O. Para poder conectarnos al servidor usaremos la siguiente instrucción (deberemos sustituir _IP_SERVIDOR_ por la IP proporcionada por [Vultr](https://www.vultr.com/?ref=8598591-6G){:target="_blank"} en la pantalla anterior, en nuestro caso \_185.92.222.149_):
 
 ```
 ssh root@IP_SERVIDOR
@@ -68,8 +68,8 @@ A continuación se nos pedirá que aceptemos las credenciales del servidor, a lo
 
 -   **Windows**: Podemos descargar uno de estos clientes gratuitos:
 
-    -   **Bitvise SSH Client**: https://dl.bitvise.com/BvSshClient-Inst.exe
-    -   **PuTTy**: https://www.putty.org/
+    -   [**Bitvise SSH Client**](https://dl.bitvise.com/BvSshClient-Inst.exe){:target="\_blank"}
+    -   [**PuTTy**](https://www.putty.org/){:target="\_blank"}
 
     Cada uno de estos clientes tiene un funcionamiento muy similar e intuitívo. Deberemos introducir la IP, el nombre de usuario y la contraseña, y la primera vez que nos conectemos nos pedirá que aceptemos las credenciales del servidor.
 
@@ -173,7 +173,7 @@ ssh -L 5901:127.0.0.1:5901 -C -N -l staker IP_SERVIDOR
 
 Casi todos los clientes VNC funcionan de manera similar. Deberemos configurarlos para que se conecten al puerto local 5901 y así aprovechar el tunel seguro que hemos creado con el cliente _SSH_.
 
-Para **Windows** me gusta usar el cliente RealVNC (https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.529-Windows.exe) y su configuración quedaría así:
+Para **Windows** me gusta usar el cliente [RealVNC](https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.529-Windows.exe){:target="\_blank"} y su configuración quedaría así:
 
 ![alt text](./Vultr9.png)
 
