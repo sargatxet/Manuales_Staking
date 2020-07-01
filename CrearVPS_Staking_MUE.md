@@ -27,32 +27,32 @@ Otro punto a tener en cuenta a la hora de crear el servidor será la ubicación.
 Para este proceso vamos a tomar de ejemplo **MonetaryUnit** por ser el más fácil y económico de construir. Los pasos, una vez creada la cuenta en [Vultr](https://www.vultr.com/?ref=8598591-6G) serían los siguientes:
 
 1. Accederemos al apartado de **Products/Instances** y pulsaremos el botón de añadir ubicado a la derecha.
-   ![alt text](./Vultr1.png)
+   ![alt text](./images/CrearVPS_Staking_MUE/Vultr1.png)
 
 2. Elegiremos las siguientes opciones:
 
     - **Choose Server**: _Cloud Compute_
     - **Server Location**: P.e. _Amsterdam_
 
-    ![alt text](./Vultr2.png)
+    ![alt text](./images/CrearVPS_Staking_MUE/Vultr2.png)
 
     - **Server Type**: En la pestaña de _64 bits OS_ elegiremos _Ubuntu 18.04 LTS_ por ser el más compatible con todos los tipos de staking que vamos a usar.
     - **Server Size**: _25 GB SSD_ cuyo coste será de 5\$/mes y tiene como características adicionales _1 CPU, 1024MB Memory y 1000GB Bandwidth_
 
-    ![alt text](./Vultr3.png)
+    ![alt text](./images/CrearVPS_Staking_MUE/Vultr3.png)
 
     - **Establecer nombre al servidor**: P.e. _StakingMUE_
     - **Deploy Now**: Pulsaremos el botón para crear la instancia del servidor VPS.
 
-    ![alt text](./Vultr4.png)
+    ![alt text](./images/CrearVPS_Staking_MUE/Vultr4.png)
 
 Una vez realizadas estas acciones nos devolverá a la pantalla de _Products_ donde podremos ver como se instala el servidor VPS que hemos seleccionado. Una vez terminada la instalación nos aparecerá como _Running_. Si pulsamos sobre los tres puntos a su derecha podremos acceder a los detalles del servidor.
 
-![alt text](./Vultr5.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr5.png)
 
 En este apartado tendremos datos muy importantes que nos servirán para poder conectarnos remotamente al servidor como su dirección IP, el nombre de usuario administrador creado y la contraseña de acceso. Además podremos monitorizar el ancho de banda de red consumido, el uso de CPU y el coste acumulado del servicio (se tarifica por horas, por lo que podremos en cualquier momento eliminarlo sin tener que pagar por periodos mensuales o superiores, solamente pagaremos lo consumido en horas).
 
-![alt text](./Vultr6.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr6.png)
 
 ## Acceso al servidor
 
@@ -165,9 +165,9 @@ ssh -L 5901:127.0.0.1:5901 -C -N -l staker IP_SERVIDOR
 
 -   **Windows**: Dependiendo del cliente usado (Bitvise o PuTTy) configuraremos un tunel entre el puerto 5901 de _localhost_ al mismo puerto remoto (ver imágenes):
 
-![alt text](./Vultr7.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr7.png)
 
-![alt text](./Vultr8.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr8.png)
 
 ## Configurar cliente _VNC_
 
@@ -175,15 +175,15 @@ Casi todos los clientes VNC funcionan de manera similar. Deberemos configurarlos
 
 Para **Windows** me gusta usar el cliente [RealVNC](https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.529-Windows.exe) y su configuración quedaría así:
 
-![alt text](./Vultr9.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr9.png)
 
-![alt text](./Vultr10.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr10.png)
 
 Cuando nos conectemos se nos pedirá la contraseña que hemos creado al configurar el servidor VNC en el apartado 4.
 
 Cuando además sea la primera vez que nos conectamos se nos solicitará elijamos que configuración de los paneles queremos. Elegiremos la configuración por defecto:
 
-![alt text](./Vultr11.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr11.png)
 
 ## Instación billetera **MonetaryUnit**
 
@@ -195,12 +195,12 @@ wget https://github.com/muecoin/MUE/releases/download/v2.1.6/mon-2.1.6-x86_64-li
 
 A continuación cerraremos la consola de comandos y crearemos un icono en el escritorio para lanzar la aplicación pulsando el botón derecho del ratón:
 
-![alt text](./Vultr12.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr12.png)
 
-![alt text](./Vultr13.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr13.png)
 
-![alt text](./Vultr14.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr14.png)
 
 Et VOILÁ!
 
-![alt text](./Vultr15.png)
+![alt text](./images/CrearVPS_Staking_MUE/Vultr15.png)
