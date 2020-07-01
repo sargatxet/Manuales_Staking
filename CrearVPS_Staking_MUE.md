@@ -6,7 +6,7 @@ Puedes ver en detalle todos los pasos a realizar en este [vídeo](....).
 
 ## Selección de servicio VPS y necesidades mínimas
 
-Se ha seleccionado para la instalación el servicio de [Vultr](https://www.vultr.com/?ref=8598591-6G){:target="\_blank" rel="noopener"} debido a que nos proporciona 100\$ de saldo al registrarnos para usarlos durante el primer més usando este enlace [Vultr](https://www.vultr.com/?ref=8598591-6G).
+Se ha seleccionado para la instalación el servicio de [Vultr](https://www.vultr.com/?ref=8598591-6G) debido a que nos proporciona 100\$ de saldo al registrarnos para usarlos durante el primer més usando este enlace [Vultr](https://www.vultr.com/?ref=8598591-6G).
 
 Cada servicio de staking tiene unas necesidades mínimas necesarias:
 
