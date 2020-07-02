@@ -1,6 +1,6 @@
 # Configuración VPS para staking
 
-En este manual vamos a detallar los pasos necesarios para crear un servicio VPS basado en **Ubuntu Linux 18.04 LTS** base para poder realizar labores de staking.
+En este manual vamos a detallar los pasos necesarios para crear un servicio VPS basado en **Ubuntu Linux 18.04 LTS** para poder realizar labores de staking.
 
 Puedes ver en detalle todos los pasos a realizar en este [vídeo](....).
 
@@ -8,13 +8,13 @@ Puedes ver en detalle todos los pasos a realizar en este [vídeo](....).
 
 Se ha seleccionado para la instalación el servicio de [Vultr](https://www.vultr.com/?ref=8598591-6G) debido a que nos proporciona 100\$ de saldo al registrarnos para usarlos durante el primer més usando este enlace [Vultr](https://www.vultr.com/?ref=8598591-6G).
 
-Cada servicio de staking tiene unas necesidades mínimas necesarias:
+Cada servicio de staking tiene unas necesidades mínimas diferentes:
 
 -   **MonetaryUnit**: 1 Core, 1GB RAM y 10GB de disco duro
 -   **OkCash**: 1 Core, 2GB RAM y 10GB de disco duro
 -   **Energi**: 1 Core, 1GB RAM y 10GB de disco duro
 
-Debido a eso y tomando como servicio VPS [Vultr](https://www.vultr.com/?ref=8598591-6G) deberemos elegir los siguientes tipos de servicios:
+[Vultr](https://www.vultr.com/?ref=8598591-6G) nos ofrece los siguientes tipos de servicios para cubrir dichas necesidades:
 
 -   **MonetaryUnit**: Server Cloud Compute --> Server Size 25 GB SSD (5\$/mes)
 -   **OkCash**: Server Cloud Compute --> Server Size 55 GB SSD (10\$/mes)
