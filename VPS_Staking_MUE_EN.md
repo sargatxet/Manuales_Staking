@@ -80,18 +80,18 @@ Once we've logged as _root_ into VPS we, first of all, must configure the system
 
 ```
 apt update && \
-apt upgrade -y
+    apt upgrade -y
 ```
 
 -   Setting swap memory:
 
 ```
 dd if=/dev/zero of=/swapfile bs=4M count=1024 && \
-chmod 600 /swapfile && \
-mkswap /swapfile && \
-swapon /swapfile && \
-echo -e '/swapfile none swap defaults 0 0' >> /etc/fstab && \
-echo -e 'vm.swappiness=10' >> /etc/sysctl.conf
+    chmod 600 /swapfile && \
+    mkswap /swapfile && \
+    swapon /swapfile && \
+    echo -e '/swapfile none swap defaults 0 0' >> /etc/fstab && \
+    echo -e 'vm.swappiness=10' >> /etc/sysctl.conf
 ```
 
 -   Rebooting system so changes take place:
@@ -134,7 +134,7 @@ Now we must set _VNC_ default config:
 
 ```
 vncserver -kill :1 && \
-echo -e '#!/bin/bash \nxrdb \$HOME/.Xresources \nstartxfce4 &' > ~/.vnc/xstartup
+    echo -e '#!/bin/bash \nxrdb \$HOME/.Xresources \nstartxfce4 &' > ~/.vnc/xstartup
 ```
 
 -   To set the system so it will restart _VNC_ service everytime the system must be rebooted we need to exit to _root_ prompt and execute the following commands:
@@ -143,17 +143,17 @@ echo -e '#!/bin/bash \nxrdb \$HOME/.Xresources \nstartxfce4 &' > ~/.vnc/xstartup
 exit
 
 echo -e '[Unit] \nDescription=Start VNC server at startup \nAfter=syslog.target network.target \n \n[Service] \nType=forking \nUser=staker \nGroup=staker \nWorkingDirectory=/home/staker \n \nPIDFile=/home/staker/.vnc/%H:%i.pid \nExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1 \nExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x960 :%i \nExecStop=/usr/bin/vncserver -kill :%i \n \n[Install] \nWantedBy=multi-user.target \n' > /etc/systemd/system/vncserver@.service && \
-systemctl daemon-reload && \
-systemctl enable vncserver@1.service && \
-systemctl start vncserver@1 && \
-reboot
+    systemctl daemon-reload && \
+    systemctl enable vncserver@1.service && \
+    systemctl start vncserver@1 && \
+    reboot
 ```
 
 -   Once the system has rebooted we will set the firewall rules to avoid unwanted intrussions (we must answer yes when prompt):
 
 ```
 ufw allow ssh && \
-ufw enable
+    ufw enable
 ```
 
 ## Setting secure access to _VNC_ remote desktop:
@@ -194,11 +194,11 @@ On remote desktop we must open a console and execute this command (v2.1.6 is the
 
 ```
 wget https://github.com/muecoin/MUE/releases/download/v2.1.6/mon-2.1.6-x86_64-linux-gnu.tar.gz && \
-tar xvzf mon-2.1.6-x86_64-linux-gnu.tar.gz && \
-mkdir ~/bin && \
-echo -e 'PATH=~/bin:$PATH' >> .bashrc && \
-mv mon/bin/* ~/bin && \
-rm -Rvf mon/ mon-2.1.6-x86_64-linux-gnu.tar.gz
+    tar xvzf mon-2.1.6-x86_64-linux-gnu.tar.gz && \
+    mkdir ~/bin && \
+    echo -e 'PATH=~/bin:$PATH' >> .bashrc && \
+    mv mon/bin/* ~/bin && \
+    rm -Rvf mon/ mon-2.1.6-x86_64-linux-gnu.tar.gz
 ```
 
 Now we can set a desktop launcher so we can run wallet using the mouse:
