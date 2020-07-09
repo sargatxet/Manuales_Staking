@@ -80,13 +80,19 @@ Una vez hayamos accedido a la consola del servidor deberemos realizar los siguie
 -   Actualizar el software a la última versión:
 
 ```
-apt update && apt upgrade -y
+apt update && \
+apt upgrade -y
 ```
 
 -   Configurar la memoria de intercambio para cubrir las necesidades del software de staking.
 
 ```
-dd if=/dev/zero of=/swapfile bs=4M count=1024 && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && echo -e '/swapfile none swap defaults 0 0' >> /etc/fstab && echo -e 'vm.swappiness=10' >> /etc/sysctl.conf
+dd if=/dev/zero of=/swapfile bs=4M count=1024 && \
+chmod 600 /swapfile && \
+mkswap /swapfile && \
+swapon /swapfile && \
+echo -e '/swapfile none swap defaults 0 0' >> /etc/fstab && \
+echo -e 'vm.swappiness=10' >> /etc/sysctl.conf
 ```
 
 -   Es conveniente reiniciar el sistema en este momento, lo que nos obligará a volver a conectarnos, para lo cual ejecutaremos el comando:
@@ -130,7 +136,8 @@ vncserver
 Se nos pedirá que introduzcamos una contraseña para el servidor _VNC_ que nos será necesaria para cuando queramos conectarnos remotamente el escritorio del VPS (no será necesario introducir contraseña de solo lectura cuando se nos pida). Una vez introducida ejecutaremos los siguientes comandos para configurar la sesión de usuario para el escritorio gráfico:
 
 ```
-vncserver -kill :1 && echo -e '#!/bin/bash \nxrdb \$HOME/.Xresources \nstartxfce4 &' > ~/.vnc/xstartup
+vncserver -kill :1 && \
+echo -e '#!/bin/bash \nxrdb \$HOME/.Xresources \nstartxfce4 &' > ~/.vnc/xstartup
 ```
 
 -   Configurar el inicio automático del entorno gráfico al reiniciar el sistema. Para ello usaremos los siguientes comandos:
@@ -142,15 +149,18 @@ exit
 para volver al usuario _root_
 
 ```
-echo -e '[Unit] \nDescription=Start VNC server at startup \nAfter=syslog.target network.target \n \n[Service] \nType=forking \nUser=staker \nGroup=staker \nWorkingDirectory=/home/staker \n \nPIDFile=/home/staker/.vnc/%H:%i.pid \nExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1 \nExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x960 :%i \nExecStop=/usr/bin/vncserver -kill :%i \n \n[Install] \nWantedBy=multi-user.target \n' > /etc/systemd/system/vncserver@.service
-
-systemctl daemon-reload && systemctl enable vncserver@1.service && systemctl start vncserver@1 && reboot
+echo -e '[Unit] \nDescription=Start VNC server at startup \nAfter=syslog.target network.target \n \n[Service] \nType=forking \nUser=staker \nGroup=staker \nWorkingDirectory=/home/staker \n \nPIDFile=/home/staker/.vnc/%H:%i.pid \nExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1 \nExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x960 :%i \nExecStop=/usr/bin/vncserver -kill :%i \n \n[Install] \nWantedBy=multi-user.target \n' > /etc/systemd/system/vncserver@.service && \
+systemctl daemon-reload && \
+systemctl enable vncserver@1.service && \
+systemctl start vncserver@1 && \
+reboot
 ```
 
 -   Configuramos el firewall para limitar el acceso solamente mediante conexión segura _SSH_:
 
 ```
-ufw allow ssh && ufw enable
+ufw allow ssh && \
+ufw enable
 ```
 
 ## Configuración del acceso seguro al escritorio del VPS
@@ -190,7 +200,12 @@ Cuando además sea la primera vez que nos conectamos se nos solicitará elijamos
 Para instalar dicha billetera deberemos seguir las siguientes instrucciones desde una consola de comandos del VPS del escritorio remoto:
 
 ```
-wget https://github.com/muecoin/MUE/releases/download/v2.1.6/mon-2.1.6-x86_64-linux-gnu.tar.gz && tar xvzf mon-2.1.6-x86_64-linux-gnu.tar.gz && mkdir ~/bin && echo -e 'PATH=~/bin:$PATH' >> .bashrc && mv mon/bin/* ~/bin && rm -Rvf mon/ mon-2.1.6-x86_64-linux-gnu.tar.gz
+wget https://github.com/muecoin/MUE/releases/download/v2.1.6/mon-2.1.6-x86_64-linux-gnu.tar.gz && \
+tar xvzf mon-2.1.6-x86_64-linux-gnu.tar.gz && \
+mkdir ~/bin && \
+echo -e 'PATH=~/bin:$PATH' >> .bashrc && \
+mv mon/bin/* ~/bin && \
+rm -Rvf mon/ mon-2.1.6-x86_64-linux-gnu.tar.gz
 ```
 
 A continuación cerraremos la consola de comandos y crearemos un icono en el escritorio para lanzar la aplicación pulsando el botón derecho del ratón:
